@@ -11,20 +11,22 @@
     <script type="application/javascript" src="../Flat-UI-master/dist/js/vendor/jquery.min.js"></script>
     <script type="application/javascript" src="../Flat-UI-master/docs/assets/js/application.js"></script>
     <script type="application/javascript" src="../Flat-UI-master/dist/js/flat-ui.min.js"></script>
-    <script type="application/javascript" src="../js/home.js"></script>
+    <script type="application/javascript" src="../js/bind.js"></script>
+    <script type="application/javascript" src="../js/jquery-ui.min.js"></script>
     <meta name="theme-color" content="#808080">
 </head>
 <body>
-    <div>
-        用户名:<p id="username"></p>
-        用户ID:<p id="user_id"></p>
-        Token:<p id="token"><%= token %></p>
+    <p hidden id="token"><%= token %></p>
+    <button id="learn">绑定网络学堂</button>
+    <button id="git_hub">绑定GitHub</button>
+    <div id="learn_dialog">
+        <p>请输入您的用户名和密码</p>
+        <form>
+            <label>用户名:</label>
+            <input type="text" id="username" title="username"/>
+            <label>密码:</label>
+            <input type="text" id="password" title="password"/>
+        </form>
     </div>
-
-    <div>
-        <ul id="notifications_list"></ul>
-    </div>
-
-    <a id="bind">添加绑定</a>
 </body>
 </html>

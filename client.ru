@@ -28,6 +28,15 @@ app = lambda do |env|
       return ['200',
               {'Content-Type' => 'text/html'},
               [ERB.new(content).result(binding)]]
+    elsif url_first == 'bind'
+      token = url.split('/')[2]
+      content = ''
+      open 'public/templates/bind.erb' do |file|
+        content = file.read
+      end
+      return ['200',
+              {'Content-Type' => 'text/html'},
+              [ERB.new(content).result(binding)]]
     end
   end
 

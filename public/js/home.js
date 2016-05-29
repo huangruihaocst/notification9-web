@@ -8,6 +8,7 @@ $(document).ready(function (){
         var host = data['host'];
         var auth_port = data['auth_port'];
         var scheduler_port = data['scheduler_port'];
+        var client_port = data['client_port'];
         $.ajax({
             type: 'GET',
             url: 'http://' + host + ':' + auth_port + '/api/v1/user_info?token=' + token,
@@ -33,6 +34,6 @@ $(document).ready(function (){
                 });
             }
         });
-
+        $('#bind').attr('href', 'http://' + host + ':' + client_port + '/bind/' + token);
     });
 });
