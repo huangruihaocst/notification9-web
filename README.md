@@ -23,5 +23,6 @@
     ```
 4. 运行服务器
     ```
+    $ cd Notification9-Web
     $ rackup client.ru -p 8004
     ```
