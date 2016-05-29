@@ -1,0 +1,6 @@
+{
+  "host":"127.0.0.1",
+  "auth_port": "8002",
+  "scheduler_port": "8001",
+  "client_port": "8004"
+}

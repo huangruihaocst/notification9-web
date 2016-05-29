@@ -7,18 +7,17 @@ $(document).ready(function(){
         e.preventDefault();
         var username = $('#username').val();
         var password = $('#password').val();
-        var host, auth_port;
         $.get('js/config.json', function(data){
-            host = data['host'];
-            auth_port = data['auth_port'];
+            var host = data['host'];
+            var auth_port = data['auth_port'];
+            var client_port = data['client_port'];
             var params = 'username=' + username + '&' + 'password=' + password;
             $.ajax({
                 type: 'POST',
                 url: 'http://' + host + ':' + auth_port + '/api/v1/login?' + params,
-                success: function (data) {
-                    var token = JSON.parse(data)['token'];
-                    document.body.innerHTML = '';
-                    document.load('notifications.html');
+                success: function (response) {
+                    var token = JSON.parse(response)['token'];
+                    window.location.replace('http://' + host + ':' + client_port + '/home/' + token);
                 }
             });
         });
