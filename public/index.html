@@ -46,12 +46,19 @@
                 <h5 class="demo-panel-title">密码:</h5>
                 <input type="password" id="password" title="password"
                        class="form-control typeahead-only input-lg tt-input"/>
+                <div class="collapse" id="confirm_box">
+                    <h5 class="demo-panel-title">确认密码:</h5>
+                    <input type="password" id="confirm" title="confirm"
+                    class="form-control typeahead-only input-lg tt-input"/>
+                </div>
                 <br/>
                 <div class="row">
                     <div class="col-md-9"></div>
                     <input type="submit" value="登录" class="btn btn-primary btn-hg col-md-1"/>
                     <div class="col-sm-1"></div>
-                    <input type="button" value="注册" id="register" class="btn btn-primary btn-hg col-md-1">
+                    <input type="button" value="注册" id="register" class="btn btn-primary btn-hg col-md-1"
+                           role="button" data-toggle="collapse" href="#confirm_box" aria-expanded="false"
+                           aria-controls="confirm_box">
                 </div>
 
             </form>
