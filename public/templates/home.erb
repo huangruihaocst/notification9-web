@@ -1,30 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Notifications</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <script src="../js/jquery-2.2.1.min.js"></script>
-    <!-- js顺序不能颠倒 -->
-    <link rel="stylesheet" type="text/css" href="../Flat-UI-master/dist/css/vendor/bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="../Flat-UI-master/dist/css/flat-ui.min.css"/>
-    <script type="application/javascript" src="../Flat-UI-master/dist/js/vendor/jquery.min.js"></script>
-    <script type="application/javascript" src="../Flat-UI-master/docs/assets/js/application.js"></script>
-    <script type="application/javascript" src="../Flat-UI-master/dist/js/flat-ui.min.js"></script>
-    <script type="application/javascript" src="../js/home.js"></script>
-    <meta name="theme-color" content="#808080">
+  <meta charset="UTF-8">
+  <title>Notifications</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script src="../js/jquery-2.2.1.min.js"></script>
+  <!-- js顺序不能颠倒 -->
+  <link rel="stylesheet" type="text/css" href="../Flat-UI-master/dist/css/vendor/bootstrap/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../Flat-UI-master/dist/css/flat-ui.min.css"/>
+  <script type="application/javascript" src="../Flat-UI-master/dist/js/vendor/jquery.min.js"></script>
+  <script type="application/javascript" src="../Flat-UI-master/docs/assets/js/application.js"></script>
+  <script type="application/javascript" src="../Flat-UI-master/dist/js/flat-ui.min.js"></script>
+  <script type="application/javascript" src="../js/home.js"></script>
+  <meta name="theme-color" content="#808080">
 </head>
 <body>
-    <div>
-        用户名:<p id="username"></p>
-        用户ID:<p id="user_id"></p>
-        Token:<p id="token"><%= token %></p>
+  <div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      </button>
+      <a class="navbar-brand" href="#">Notification⑨</a>
     </div>
-
-    <div>
-        <ul id="notifications_list"></ul>
+      <div class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav">
+          <li><a id="bind">添加绑定</a></li>
+          <li class="active"><a href="#">关于</a></li>
+        </ul>
+      </div>
     </div>
+  </div>
+  <div class="container">
+    <dl class="dl-horizontal">
+      <dt>用户名</dt>
+      <dd id="username" class="text-primary"></dd>
+      <dt>用户ID</dt>
+      <dd id="user_id" class="text-primary"></dd>
+      <dt hidden>Token</dt>
+      <dd id="token" class="text-primary" hidden><%= token %></dd>
+    </dl>
+    <h4>通知</h4>
+    <ul id="notifications_list" style="list-style-type: none"></ul>
+  </div>
 
-    <a id="bind">添加绑定</a>
 </body>
 </html>

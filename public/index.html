@@ -15,14 +15,41 @@
     <meta name="theme-color" content="#808080">
 </head>
 <body>
-    <p>登录</p>
-    <form id="login_form" method="post">
-        用户名:<input type="text" id="username" title="username"/>
-        <br/>
-        密码:<input type="password" id="password" title="password"/>
-        <br/>
-        <input type="submit" value="登录"/>
-        <input type="button" value="注册" id="register">
-    </form>
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                </button>
+                <a class="navbar-brand" href="#">Notification⑨</a>
+            </div>
+            <div class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">关于</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>登录</h1>
+            <form id="login_form" method="post">
+                <h5 class="demo-panel-title">用户名:</h5>
+                <input type="text" id="username" title="username"
+                       class="form-control typeahead-only input-lg tt-input"/>
+                <h5 class="demo-panel-title">密码:</h5>
+                <input type="password" id="password" title="password"
+                       class="form-control typeahead-only input-lg tt-input"/>
+                <br/>
+                <div class="row">
+                    <div class="col-md-9"></div>
+                    <input type="submit" value="登录" class="btn btn-primary btn-hg col-md-1"/>
+                    <div class="col-sm-1"></div>
+                    <input type="button" value="注册" id="register" class="btn btn-primary btn-hg col-md-1">
+                </div>
+
+            </form>
+        </div>
+    </div>
 </body>
 </html>
