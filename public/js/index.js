@@ -3,7 +3,7 @@
  */
 'use strict';
 $(document).ready(function(){
-    $('#login_form').submit(function(e){
+    $('#login').submit(function(e){
         e.preventDefault();
         var username = $('#username').val();
         var password = $('#password').val();
@@ -16,8 +16,22 @@ $(document).ready(function(){
                 type: 'POST',
                 url: 'http://' + host + ':' + auth_port + '/api/v1/login?' + params,
                 success: function (response) {
-                    var token = JSON.parse(response)['token'];
-                    window.location.replace('http://' + host + ':' + client_port + '/home/' + token);
+                    response = JSON.parse(response)
+                    if(response['status'] == 'ok') {
+                        var token = response['token'];
+                        console.log(token);
+                        window.location.replace('http://' + host + ':' + client_port + '/home/' + token);
+                    } else {
+                        console.log(response['reason']);
+                        if (response['reason'] == 'wrong password') {
+                            $('#message').html('密码错误<strong>(·8·)</strong>');
+                        } else if (response['reason'] == 'user not found') {
+                            $('#message').html('不存在这个用户<strong>(·8·)</strong>');
+                        } else {
+                            $('#message').html('未知错误<strong>(·8·)</strong>');
+                        }
+                        $('#alert').show();
+                    }
                 }
             });
         });

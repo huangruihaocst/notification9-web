@@ -31,9 +31,15 @@
         </div>
     </div>
     <div class="container">
+        <div class="alert alert-danger alert-dismissible" role="alert" id="alert" hidden>
+            <button type="button" class="close" aria-label="Close" onclick="$('#alert').hide();">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div id="message"></div>
+        </div>
         <div class="jumbotron">
             <h1>登录</h1>
-            <form id="login_form" method="post">
+            <form id="login" method="post">
                 <h5 class="demo-panel-title">用户名:</h5>
                 <input type="text" id="username" title="username"
                        class="form-control typeahead-only input-lg tt-input"/>

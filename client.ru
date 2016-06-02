@@ -6,7 +6,7 @@ require 'rubygems'
 require 'erb'
 
 use Rack::Static,
-    :urls => %w(/js /Flat-UI-master /templates),
+    :urls => %w(/js /Flat-UI-master /templates ../favicon.ico),
     :root => 'public'
 
 app = lambda do |env|
