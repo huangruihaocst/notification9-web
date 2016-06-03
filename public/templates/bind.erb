@@ -42,15 +42,117 @@
     <ul style="list-style-type: none">
       <li>
         <p id="learn" class="lead">网络学堂</p>
-        <p id="learn_status"></p>
-        <a id="learn_conduction"></a>
+        <div class="row">
+          <div id="learn_status" class="col-md-2"></div>
+          <button id="learn_bind" class="col-md-1"></button>
+        </div>
+      </li>
+      <li>
+        <br/><br/>
       </li>
       <li>
         <p id="github" class="lead">GitHub</p>
-        <p id="github_status"></p>
-        <a id="github_conduction"></a>
+        <div class="row">
+          <div id="github_status" class="col-md-2"></div>
+          <button id="github_bind" class="col-md-1"></button>
+        </div>
+      </li>
+      <li>
+        <br/><br/>
+      </li>
+      <li>
+        <p id="vultr" class="lead">Vultr</p>
+        <div class="row">
+          <div id="vultr_status" class="col-md-2"></div>
+          <button id="vultr_bind" class="col-md-1" type="button"></button>
+        </div>
       </li>
     </ul>
   </div>
+
+  <!-- GitHub Modal -->
+  <div class="modal fade" id="github_modal" tabindex="-1" role="dialog" aria-labelledby="githubModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">绑定GitHub</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            用户名:
+            <input type="text" title="username" id="github_username"
+                   class="form-control typeahead-only input-sm tt-input"/>
+            密码:
+            <input type="password" title="password" id="github_password"
+                   class="form-control typeahead-only input-sm tt-input"/>
+            Token:
+            <input type="text" title="token" id="github_token"
+                   class="form-control typeahead-only input-sm tt-input"/>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary">绑定</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vultr Modal -->
+  <div class="modal fade" id="vultr_modal" tabindex="-1" role="dialog" aria-labelledby="vultrModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">绑定Vultr</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            用户名:
+            <input type="text" title="username" id="vultr_username"
+                   class="form-control typeahead-only input-sm tt-input"/>
+            密码:
+            <input type="password" title="password" id="vultr_password"
+                   class="form-control typeahead-only input-sm tt-input"/>
+            Token:
+            <input type="text" title="token" id="vultr_token"
+                   class="form-control typeahead-only input-sm tt-input"/>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary">绑定</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Learn Modal -->
+  <div class="modal fade" id="learn_modal" tabindex="-1" role="dialog" aria-labelledby="learnModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">绑定网络学堂</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            用户名:
+            <input type="text" title="username" id="learn_username"
+                   class="form-control typeahead-only input-sm tt-input"/>
+            密码:
+            <input type="password" title="password" id="learn_password"
+                   class="form-control typeahead-only input-sm tt-input"/>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary">绑定</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
