@@ -15,17 +15,36 @@
     <meta name="theme-color" content="#808080">
 </head>
 <body>
-    <p hidden id="token"><%= token %></p>
-    <button id="learn">绑定网络学堂</button>
-    <button id="git_hub">绑定GitHub</button>
-    <div id="learn_dialog">
-        <p>请输入您的用户名和密码</p>
-        <form>
-            <label>用户名:</label>
-            <input type="text" id="username" title="username"/>
-            <label>密码:</label>
-            <input type="text" id="password" title="password"/>
-        </form>
+  <div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+        <a class="navbar-brand" href="/home/<%= token %>">Notification⑨</a>
+      </div>
+      <div class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav">
+          <li class="active" ><a id="bind" href="#">添加绑定</a></li>
+          <li><a href="#">关于</a></li>
+        </ul>
+      </div>
     </div>
+  </div>
+  <div class="container">
+    <p id="token" hidden><%= token %></p>
+    <ul style="list-style-type: none">
+      <li>
+        <p id="learn" class="lead">网络学堂</p>
+        <p id="learn_status"></p>
+        <a id="learn_conduction"></a>
+      </li>
+      <li>
+        <p id="github" class="lead">GitHub</p>
+        <p id="github_status"></p>
+        <a id="github_conduction"></a>
+      </li>
+    </ul>
+  </div>
 </body>
 </html>

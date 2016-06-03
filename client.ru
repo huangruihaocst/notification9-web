@@ -17,6 +17,14 @@ app = lambda do |env|
     return ['200',
             {'Content-Type' => 'text/html'},
             File.open('public/index.html', 'r')]
+  elsif url == '/favicon.ico'
+    content = ''
+    open 'favicon.ico' do |file|
+      content = file.read
+    end
+    return ['200',
+     {'Content-Type' => 'text/plain'},
+     [content]]
   else
     url_first = url.split('/')[1]
     if url_first == 'home'
