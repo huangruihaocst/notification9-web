@@ -5,13 +5,9 @@
 $(document).ready(function (){
     var token = $('#token').text();
     $.get('../js/config.json', function(data){
-        var host = data['host'];
-        var auth_port = data['auth_port'];
-        var scheduler_port = data['scheduler_port'];
-        var client_port = data['client_port'];
         $.ajax({
             type: 'GET',
-            url: 'http://' + host + ':' + auth_port + '/api/v1/user_info?token=' + token,
+            url: data['auth']['host'] + ':' + data['auth']['port'] + '/api/v1/user_info?token=' + token,
             success: function (response) {
                 response = JSON.parse(response);
                 var username = response['username'];
@@ -20,7 +16,7 @@ $(document).ready(function (){
                 $('#user_id').text(user_id);
                 $.ajax({
                     type: 'GET',
-                    url: 'http://' + host + ':' + scheduler_port + '/api/v1/unread_messages?user_id=' + user_id
+                    url: data['scheduler']['host'] + ':' + data['scheduler']['port'] + '/api/v1/unread_messages?user_id=' + user_id
                     + '&token=' + token,
                     success: function (messages) {
                         messages = JSON.parse(messages)['simple_messages']; // array
@@ -28,7 +24,7 @@ $(document).ready(function (){
                             var title = messages[i]['title'];
                             var url = messages[i]['url'];
                             var source = '来源：' + messages[i]['source'];
-                            var html = '<li><div class="row"><div><a href="' + url +'" class="col-md-3">'
+                            var html = '<li><div class="row"><div><a href="' + url +'" class="col-md-3" target="blank">'
                                 + title + '</a></div>' + '<div class="col-md-2"></div><p class="text-info col-md-2">'
                                 + source + '</p>' + '</div></li>';
                             $('#notifications_list').append(html);
@@ -37,6 +33,6 @@ $(document).ready(function (){
                 });
             }
         });
-        $('#bind').attr('href', 'http://' + host + ':' + client_port + '/bind/' + token);
+        $('#bind').attr('href', data['client']['host'] + ':' + data['client']['port'] + '/bind/' + token);
     });
 });

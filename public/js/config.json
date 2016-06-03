@@ -1,6 +1,26 @@
 {
-  "host":"127.0.0.1",
-  "auth_port": "8002",
-  "scheduler_port": "8001",
-  "client_port": "8004"
+  "auth": {
+    "host": "http://127.0.0.1",
+    "port": "8002"
+  },
+  "scheduler": {
+    "host": "http://127.0.0.1",
+    "port": "8001"
+  },
+  "client": {
+  "host": "http://127.0.0.1",
+  "port": "8004"
+  },
+  "learn": {
+  "host": "http://127.0.0.1",
+  "port": "8005"
+  },
+  "github": {
+  "host": "http://127.0.0.1",
+  "port": "8003"
+  },
+  "vultr": {
+  "host": "http://127.0.0.1",
+  "port": "8006"
+  }
 }

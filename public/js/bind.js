@@ -4,13 +4,9 @@
 $(document).ready(function(){
     var token = $('#token').text();
     $.get('../js/config.json', function(data){
-        var host = data['host'];
-        var auth_port = data['auth_port'];
-        var scheduler_port = data['scheduler_port'];
-        var client_port = data['client_port'];
         $.ajax({
             type: 'GET',
-            url: 'http://' + host + ':' + scheduler_port + '/api/v1/all_sources?token=' + token,
+            url: data['scheduler']['host'] + ':' + data['scheduler']['port'] + '/api/v1/all_sources?token=' + token,
             success: function(response) {
                 response = JSON.parse(response);
                 if (response['status'] == 'ok') {
