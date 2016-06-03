@@ -26,6 +26,43 @@ $(document).ready(function(){
                                                 if (result['registered']) {
                                                     $('#github_status').text('已绑定');
                                                     $('#github_bind').text('解绑').addClass('btn btn-danger btn-sm');
+                                                    $('#github_form').submit(function (e) {
+                                                        e.preventDefault();
+                                                        var username = $('#github_username').val();
+                                                        var password = $('#github_password').val();
+                                                        var g_token = $('#github_token').val();
+                                                        if (username == '') {
+                                                            $('#message').html('用户名不能为空<strong>(·8·)</strong>');
+                                                            $('#alert').show();
+                                                        } else if (password == '') {
+                                                            $('#message').html('密码不能为空<strong>(·8·)</strong>');
+                                                            $('#alert').show();
+                                                        } else if (g_token == '') {
+                                                            $('#message').html('Token不能为空<strong>(·8·)</strong>');
+                                                            $('#alert').show();
+                                                        } else {
+                                                            $.ajax({
+                                                                type: 'POST',
+                                                                url: data['github']['host'] + ':' + data['github']['port']
+                                                                + '/api/v1/register?github_user_name=' + username + '&password='
+                                                                + password + '&github_token=' + g_token + '&token=' + token,
+                                                                success: function (res){
+                                                                    res = JSON.parse(res);
+                                                                    if (res['status'] == 'ok') {
+                                                                        $('#success').show();
+                                                                        $('#learn_modal').modal('hide');
+                                                                    } else {
+                                                                        if (res['reason'] == '') {
+
+                                                                        } else {
+                                                                            $('#message').html('未知错误<strong>(·8·)</strong>');
+                                                                            $('#alert').show();
+                                                                        }
+                                                                    }
+                                                                }
+                                                            });
+                                                        }
+                                                    });
                                                 } else {
                                                     $('#github_status').text('未绑定');
                                                     $('#github_bind').text('绑定').addClass('btn btn-primary btn-sm')
@@ -58,15 +95,17 @@ $(document).ready(function(){
                                                                 type: 'POST',
                                                                 url: data['vultr']['host'] + ':' + data['vultr']['port']
                                                                 + '/api/v1/register?username=' + username + '&password='
-                                                                + password + '&token=' + token,
+                                                                + password + '&vultr_token=' + token + '&token=' + token,
                                                                 success: function (res){
                                                                     res = JSON.parse(res);
                                                                     if (res['status'] == 'ok') {
                                                                         $('#success').show();
                                                                         $('#learn_modal').modal('hide');
                                                                     } else {
-                                                                        if (res['reason'] == 'not a tsinghua account') {
-                                                                            $('#message').html('这不是一个清华账号<strong>(·8·)</strong>');
+                                                                        if (res['reason'] == '') {
+
+                                                                        } else {
+                                                                            $('#message').html('未知错误<strong>(·8·)</strong>');
                                                                             $('#alert').show();
                                                                         }
                                                                     }
@@ -107,6 +146,9 @@ $(document).ready(function(){
                                                                     } else {
                                                                         if (res['reason'] == 'not a tsinghua account') {
                                                                             $('#message').html('这不是一个清华账号<strong>(·8·)</strong>');
+                                                                            $('#alert').show();
+                                                                        } else {
+                                                                            $('#message').html('未知错误<strong>(·8·)</strong>');
                                                                             $('#alert').show();
                                                                         }
                                                                     }

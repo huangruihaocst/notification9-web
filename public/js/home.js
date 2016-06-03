@@ -24,7 +24,7 @@ $(document).ready(function (){
                             var title = messages[i]['title'];
                             var url = messages[i]['url'];
                             var source = '来源：' + messages[i]['source'];
-                            var html = '<li><div class="row"><div><a href="' + url +'" class="col-md-3" target="blank">'
+                            var html = '<li><div class="row"><div><a href="' + url +'" class="col-md-3" target="_blank">'
                                 + title + '</a></div>' + '<div class="col-md-2"></div><p class="text-info col-md-2">'
                                 + source + '</p>' + '</div></li>';
                             $('#notifications_list').append(html);
