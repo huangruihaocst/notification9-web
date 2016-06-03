@@ -32,11 +32,17 @@
     </div>
   </div>
   <div class="container">
+    <div class="alert alert-success alert-dismissible" role="alert" id="success" hidden>
+      <button type="button" class="close" aria-label="Close" onclick="$('#success').hide();">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div>绑定成功<strong>(·8·)</strong></div>
+    </div>
     <div class="alert alert-danger alert-dismissible" role="alert" id="alert" hidden>
       <button type="button" class="close" aria-label="Close" onclick="$('#alert').hide();">
         <span aria-hidden="true">&times;</span>
       </button>
-      <div id="message">未知错误<strong>(·8·)</strong></div>
+      <div id="message"></div>
     </div>
     <p id="token" hidden><%= token %></p>
     <ul style="list-style-type: none">
@@ -79,7 +85,7 @@
           <h4 class="modal-title" id="myModalLabel">绑定GitHub</h4>
         </div>
         <div class="modal-body">
-          <form>
+          <form id="github_form">
             用户名:
             <input type="text" title="username" id="github_username"
                    class="form-control typeahead-only input-sm tt-input"/>
@@ -89,11 +95,11 @@
             Token:
             <input type="text" title="token" id="github_token"
                    class="form-control typeahead-only input-sm tt-input"/>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+              <button type="submit" class="btn btn-primary">绑定</button>
+            </div>
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-          <button type="button" class="btn btn-primary">绑定</button>
         </div>
       </div>
     </div>
@@ -108,7 +114,7 @@
           <h4 class="modal-title" id="myModalLabel">绑定Vultr</h4>
         </div>
         <div class="modal-body">
-          <form>
+          <form id="vultr_form" method="post">
             用户名:
             <input type="text" title="username" id="vultr_username"
                    class="form-control typeahead-only input-sm tt-input"/>
@@ -118,11 +124,14 @@
             Token:
             <input type="text" title="token" id="vultr_token"
                    class="form-control typeahead-only input-sm tt-input"/>
+            <div>
+              请到<a href="https://my.vultr.com/settings/#settingsapi">这里</a>创建一个token并填入上面的框中
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+              <button type="submit" class="btn btn-primary">绑定</button>
+            </div>
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-          <button type="button" class="btn btn-primary">绑定</button>
         </div>
       </div>
     </div>
@@ -137,18 +146,18 @@
           <h4 class="modal-title" id="myModalLabel">绑定网络学堂</h4>
         </div>
         <div class="modal-body">
-          <form>
+          <form id="learn_form" method="post">
             用户名:
             <input type="text" title="username" id="learn_username"
                    class="form-control typeahead-only input-sm tt-input"/>
             密码:
             <input type="password" title="password" id="learn_password"
                    class="form-control typeahead-only input-sm tt-input"/>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+              <button type="submit" class="btn btn-primary" id="learn_bind_submit">绑定</button>
+            </div>
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-          <button type="button" class="btn btn-primary">绑定</button>
         </div>
       </div>
     </div>
