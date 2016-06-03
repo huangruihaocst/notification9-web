@@ -32,6 +32,12 @@
     </div>
   </div>
   <div class="container">
+    <div class="alert alert-danger alert-dismissible" role="alert" id="alert" hidden>
+      <button type="button" class="close" aria-label="Close" onclick="$('#alert').hide();">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div id="message">未知错误<strong>(·8·)</strong></div>
+    </div>
     <p id="token" hidden><%= token %></p>
     <ul style="list-style-type: none">
       <li>
