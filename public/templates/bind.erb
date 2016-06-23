@@ -36,13 +36,13 @@
       <button type="button" class="close" aria-label="Close" onclick="$('#success').hide();">
         <span aria-hidden="true">&times;</span>
       </button>
-      <div>绑定成功<strong>(·8·)</strong></div>
+      <div id="success_message"><strong>(·8·)</strong></div>
     </div>
     <div class="alert alert-danger alert-dismissible" role="alert" id="alert" hidden>
       <button type="button" class="close" aria-label="Close" onclick="$('#alert').hide();">
         <span aria-hidden="true">&times;</span>
       </button>
-      <div id="message"></div>
+      <div id="alert_message"></div>
     </div>
     <p id="token" hidden><%= token %></p>
     <ul style="list-style-type: none">
@@ -89,9 +89,6 @@
             用户名:
             <input type="text" title="username" id="github_username"
                    class="form-control typeahead-only input-sm tt-input"/>
-            密码:
-            <input type="password" title="password" id="github_password"
-                   class="form-control typeahead-only input-sm tt-input"/>
             Token:
             <input type="text" title="token" id="github_token"
                    class="form-control typeahead-only input-sm tt-input"/>
@@ -120,9 +117,6 @@
           <form id="vultr_form" method="post">
             用户名:
             <input type="text" title="username" id="vultr_username"
-                   class="form-control typeahead-only input-sm tt-input"/>
-            密码:
-            <input type="password" title="password" id="vultr_password"
                    class="form-control typeahead-only input-sm tt-input"/>
             Token:
             <input type="text" title="token" id="vultr_token"

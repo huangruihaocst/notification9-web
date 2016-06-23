@@ -13,6 +13,10 @@ app = lambda do |env|
 
   url = '/' + env['REQUEST_URI'].split('/')[3..-1].join('/')
 
+  if url[-1] == '?'
+    url = url[0..url.length - 2]
+  end
+
   if url == '/'
     return ['200',
             {'Content-Type' => 'text/html'},
