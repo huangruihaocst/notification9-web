@@ -73,6 +73,16 @@
           <button id="vultr_bind" class="col-md-1" type="button"></button>
         </div>
       </li>
+      <li>
+        <br/><br/>
+      </li>
+      <li>
+        <p id="rss" class="lead">RSS</p>
+        <div class="row">
+          <div id="rss_status" class="col-md-2"></div>
+          <button id="rss_bind" class="col-md-1" type="button"></button>
+        </div>
+      </li>
     </ul>
   </div>
 
@@ -81,7 +91,8 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
           <h4 class="modal-title" id="myModalLabel">绑定GitHub</h4>
         </div>
         <div class="modal-body">
@@ -110,7 +121,8 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
           <h4 class="modal-title" id="myModalLabel">绑定Vultr</h4>
         </div>
         <div class="modal-body">
@@ -153,6 +165,32 @@
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
               <button type="submit" class="btn btn-primary" id="learn_bind_submit">绑定</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RSS Modal -->
+  <div class="modal fade" id="rss_modal" tabindex="-1" role="dialog" aria-labelledby="rssModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">管理订阅</h4>
+        </div>
+        <div class="modal-body">
+          <h6>已订阅</h6>
+          <ul id="rss_subscriptions" style="list-style-type: none"></ul>
+          <p class="text-info" id="no_subscriptions">没有订阅</p>
+          <form id="rss_form" method="post">
+            <h6>添加订阅</h6>
+            <input type="text" title="subscribe" id="subscribe"
+                   class="form-control typeahead-only input-sm tt-input"/>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+              <button type="submit" class="btn btn-primary" id="rss_bind_submit">订阅</button>
             </div>
           </form>
         </div>
